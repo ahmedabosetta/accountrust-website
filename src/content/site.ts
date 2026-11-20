@@ -23,3 +23,8 @@ export const site = {
     odoo: "#714b67",
   },
 } as const;
+
+// Public files are not prefixed automatically when images are unoptimized.
+export function asset(path: string) {
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+}

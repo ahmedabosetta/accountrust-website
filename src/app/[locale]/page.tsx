@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { accountingServices, taxFaqs } from "@/content/accounting";
 import { industries, odooFaqs, odooMethod, odooWhy } from "@/content/odoo";
-import { site } from "@/content/site";
+import { asset, site } from "@/content/site";
 import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { FaqList, Card, ButtonLink, Eyebrow, Section, SectionTitle } from "@/components/ui";
@@ -41,7 +41,7 @@ export default async function HomePage({ params }: Props) {
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-slate text-white">
         <Image
-          src="/images/hero.jpg"
+          src={asset("/images/hero.jpg")}
           alt=""
           fill
           priority
@@ -170,7 +170,7 @@ export default async function HomePage({ params }: Props) {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <Image
-              src="/images/about.jpg"
+              src={asset("/images/about.jpg")}
               alt=""
               fill
               sizes="(min-width: 768px) 50vw, 100vw"

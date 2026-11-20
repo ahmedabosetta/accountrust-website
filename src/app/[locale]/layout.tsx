@@ -6,6 +6,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { routing } from "@/i18n/routing";
+import { asset } from "@/content/site";
 import type { Locale } from "@/content/types";
 import { businessJsonLd, jsonLdString } from "@/lib/seo";
 import "../globals.css";
@@ -22,7 +23,7 @@ export function generateStaticParams() {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.accountrustsvcs.com"),
-  icons: { icon: "/logo.svg" },
+  icons: { icon: asset("/logo.svg") },
 };
 
 export default async function LocaleLayout({

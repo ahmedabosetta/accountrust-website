@@ -4,7 +4,7 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Localized, Locale } from "@/content/types";
-import { site } from "@/content/site";
+import { asset, site } from "@/content/site";
 import { routing } from "@/i18n/routing";
 import { alternates } from "@/lib/seo";
 import { ButtonLink, Eyebrow, PageHero, Section } from "@/components/ui";
@@ -64,7 +64,7 @@ export default async function AboutPage({ params }: Props) {
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <Image
-              src="/images/about.jpg"
+              src={asset("/images/about.jpg")}
               alt=""
               fill
               sizes="(min-width: 768px) 50vw, 100vw"

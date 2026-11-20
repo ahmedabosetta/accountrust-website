@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { site } from "@/content/site";
+import { asset, site } from "@/content/site";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export async function Header() {
@@ -12,7 +12,7 @@ export async function Header() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-5 py-3">
         <Link href="/" className="flex items-center" aria-label={site.name}>
           <Image
-            src={site.logo}
+            src={asset(site.logo)}
             alt={site.name}
             width={76}
             height={67}
